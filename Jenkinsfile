@@ -9,12 +9,12 @@ pipeline {
         }
         stage('compile') {
             steps {
-                echo 'compiling'
+                bat 'mvn clean compile'
             }
         }
         stage('run') {
             steps {
-                echo 'running'
+                bat 'mvn package'
             }
         }
          stage('Test report using jacoco') {
